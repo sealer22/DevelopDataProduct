@@ -7,13 +7,7 @@ output: html_document
 
 In this shiny app I use the sample dataset of the Fine particulate matter (PM2.5) ambient air pollutant from Environmental Protection Agency. The dataset is also being used in the Exploratory Data Analysis Course of Coursera.
 
-Because the original data is huge and take a lot of time to load into system. In order to increase the speed, I've made some pre-processing and split the dataset into 3 smaller sets with fewer columns:
-
-summaryPM25_1999.csv
-
-summaryPM25_2002.csv
-
-summaryPM25_2005.csv
+Because the original data is huge and take a lot of time to load into system. In order to increase the speed, I've made some pre-processing and split the dataset into 3 smaller sets with fewer columns: summaryPM25_1999.csv, summaryPM25_2002.csv, and summaryPM25_2005.csv. Each file contain air pollutant data of the certain year.
 
 ```{r echo = FALSE}
 nei1 <- read.csv("summaryPM25_1999.csv")
@@ -55,4 +49,6 @@ Non-road: Airplane, Ship, etc
 
 Once users decide the target city and the source type, they can press the process button. The app will calculate and show the total emissions of each year, with a plot to show the tendency of the three years.
 
+## The function
 
+The functions in this app is very simple. First we get fips and type from ui.R, than summarize the emission of each year based on the variables. and show the results.
