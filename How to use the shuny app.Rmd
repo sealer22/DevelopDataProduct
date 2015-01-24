@@ -1,0 +1,58 @@
+---
+title: "How To Use the shiny app"
+output: html_document
+---
+
+## The dataset
+
+In this shiny app I use the sample dataset of the Fine particulate matter (PM2.5) ambient air pollutant from Environmental Protection Agency. The dataset is also being used in the Exploratory Data Analysis Course of Coursera.
+
+Because the original data is huge and take a lot of time to load into system. In order to increase the speed, I've made some pre-processing and split the dataset into 3 smaller sets with fewer columns:
+
+summaryPM25_1999.csv
+
+summaryPM25_2002.csv
+
+summaryPM25_2005.csv
+
+```{r echo = FALSE}
+nei1 <- read.csv("summaryPM25_1999.csv")
+```
+
+## The columns
+
+```{r echo=FALSE}
+head(nei1)
+```
+
+As shown above. There are 3 columns in each file:
+
+fips: A five-digit number (represented as a string) indicating the U.S. county 
+
+Emission: Amount of PM2.5 emitted, in tons
+
+type: The type of source (point, non-point, on-road, or non-road)
+
+## The app
+
+**##Please be awarea that the app need some time to load the dataset when first time running** 
+
+There are 2 varibles that users can change in this app:
+
+**fips:** 
+users can select the target city based on the fips code (i.e. 24510 = Baltimore City). The related code for each city can be found in: http://www.epa.gov/enviro/html/codes/state.html
+
+**source type:** 
+There are four source type of air pollutant users can choose:
+
+Point: Fuel Comb, Electric Generation, Coal, etc
+
+Non-point: Stationary Fuel Comb, Residential, Wood, etc
+
+On-road: Mobile, Gasoline, Heavy Duty Vehicles, etc
+
+Non-road: Airplane, Ship, etc
+
+Once users decide the target city and the source type, they can press the process button. The app will calculate and show the total emissions of each year, with a plot to show the tendency of the three years.
+
+
