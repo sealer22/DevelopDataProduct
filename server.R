@@ -34,18 +34,7 @@ shinyServer(function(input, output) {
   }
   
 
-  
-  output$result <- renderText({
-    input$goButton
 
-    isolate(input$fips)
-  })
-  
-  output$result2 <- renderText({
-    input$goButton
-    isolate(input$type)
-    #nei_array1
-  })
   
   output$result3 <- renderText({
     input$goButton
