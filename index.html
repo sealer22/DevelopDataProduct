@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny App for Air Pollutant Data</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny App for Air Pollutant Data">
+  <meta name="author" content="Cheng-Hsien Tang">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny App for Air Pollutant Data</h1>
+    <h2>The Developing Data Product project of coursera</h2>
+    <p>Cheng-Hsien Tang<br/>5-page slides for the project</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Fine particulate matter (PM2.5) ambient air pollutant sample dataset from Environmental Protection Agency</li>
+<li>Being used in the Exploratory Data Analysis Course of Coursera</li>
+<li>Made some pre-processing to increase the speed of app</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The column type</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>##   fips Emissions  type
+## 1 9001    15.714 POINT
+## 2 9001   234.178 POINT
+## 3 9001     0.128 POINT
+## 4 9001     2.036 POINT
+## 5 9001     0.388 POINT
+## 6 9001     1.490 POINT
+</code></pre>
+
+<ol>
+<li>fips: A five-digit number (represented as a string) indicating the U.S. county  dataset from Environmental Protection Agency. Reference site: <a href="http://www.epa.gov/enviro/html/codes/state.html">http://www.epa.gov/enviro/html/codes/state.html</a>.</li>
+<li>Emissions: The emissions of different types in ton.</li>
+<li>type: The type of source. (point, non-point, on-road, or non-road)</li>
+<li>After the input of variable, press the process button to calculate the results</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The result</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+<ol>
+<li>After the calculation. There is a plot that show the emission change during time.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Reference</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Shiny app: <a href="http://sealer22.shinyapps.io/DevelopDataProduct">http://sealer22.shinyapps.io/DevelopDataProduct</a></li>
+<li>Source code: <a href="https://github.com/sealer22/DevelopDataProduct">https://github.com/sealer22/DevelopDataProduct</a></li>
+<li>Document: <a href="https://github.com/sealer22/DevelopDataProduct/blob/master/How_to_use_the_shiny_app.pdf">https://github.com/sealer22/DevelopDataProduct/blob/master/How_to_use_the_shiny_app.pdf</a></li>
+<li>Slide: </li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The dataset'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The column type'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The result'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Reference'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
