@@ -1,0 +1,70 @@
+---
+title       : Shiny App for Air Pollutant Data
+subtitle    : The Developing Data Product project of coursera
+author      : Cheng-Hsien Tang
+job         : 5-page slides for the project
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## The dataset
+
+1. Fine particulate matter (PM2.5) ambient air pollutant sample dataset from Environmental Protection Agency
+2. Being used in the Exploratory Data Analysis Course of Coursera
+3. Made some pre-processing to increase the speed of app
+
+--- .class #id 
+
+## The column type
+```{r echo = FALSE}
+nei1 <- read.csv("summaryPM25_1999.csv")
+head(nei1)
+```
+
+
+1. fips: A five-digit number (represented as a string) indicating the U.S. county  dataset from Environmental Protection Agency. Reference site: http://www.epa.gov/enviro/html/codes/state.html.
+2. Emissions: The emissions of different types in ton.
+3. type: The type of source. (point, non-point, on-road, or non-road)
+4. After the input of variable, press the process button to calculate the results
+
+--- .class #id 
+
+
+
+## The result
+
+```{r echo = FALSE}
+nei1 <- read.csv("summaryPM25_1999.csv")
+nei2 <- read.csv("summaryPM25_2002.csv")
+nei3 <- read.csv("summaryPM25_2005.csv")
+
+
+nei_array <- array(dim=c(3,2)) 
+nei_array[1,1] <- c("1999") 
+nei_array[2,1] <- c("2002") 
+nei_array[3,1] <- c("2005") 
+nei_array[1,2] <- colSums (subset(nei1, nei1[,1] == 24510 & nei1[,3] == "POINT", select = c("Emissions")), na.rm = T, dims = 1) 
+nei_array[2,2] <- colSums (subset(nei2, nei2[,1] == 24510 & nei2[,3] == "POINT", select = c("Emissions")), na.rm = T, dims = 1) 
+nei_array[3,2] <- colSums (subset(nei3, nei3[,1] == 24510 & nei3[,3] == "POINT", select = c("Emissions")), na.rm = T, dims = 1) 
+plot(nei_array[,1], as.numeric(nei_array[,2]), ylab='Total Emission (ton)', xlab='',type='b') 
+
+
+```
+
+1. After the calculation. There is a plot that show the emission change during time.
+
+
+--- .class #id 
+
+## Reference
+
+1. Shiny app: http://sealer22.shinyapps.io/DevelopDataProduct
+2. Source code: https://github.com/sealer22/DevelopDataProduct
+3. Document: https://github.com/sealer22/DevelopDataProduct/blob/master/How_to_use_the_shiny_app.pdf
+
+
+
